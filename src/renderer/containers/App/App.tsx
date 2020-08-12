@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { Loading } from "../../components";
+
 const { ipcRenderer: ipc } = window.require("electron");
 
 export type Props = {};
@@ -10,10 +12,12 @@ export class App extends React.Component<Props> {
   };
   render() {
     return (
-      <div>
-        <h1>Electron with TypeScript and React (and SCSS)</h1>
-        <p>Node version: {ipc.sendSync("version")}</p>
-      </div>
+      <React.Suspense fallback={Loading}>
+        <div>
+          <h1>Electron with TypeScript and React (and SCSS)</h1>
+          <p>Node version: {ipc.sendSync("version")}</p>
+        </div>
+      </React.Suspense>
     );
   }
 

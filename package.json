@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "rimraf dist && electron-webpack dev",
     "prod": "rimraf dist && electron-webpack prod",
-    "dist": "npm run prod && electron-builder",
+    "dist": "npm run prod && electron-builder --config electron-build.json",
     "dist:dir": "npm run dist --dir -c.compression=store -c.mac.identity=null"
   },
   "repository": {
@@ -52,5 +52,7 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "source-map-support": "^0.5.19"
+  }
 }

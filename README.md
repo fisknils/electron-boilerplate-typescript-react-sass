@@ -4,7 +4,7 @@ A simple Electron application that uses [TypeScript](http://www.typescriptlang.o
 ## Usage
 You can use this project to create your own Electron applications.
 ```bash
-$ git clone https://github.com/Chuzzy/electron-react-typescript.git
+$ git clone https://github.com/fisknils/electron-boilerplate-typescript-react-sass.git
 $ cd electron-react-typescript
 $ npm install # Install dependencies
 $ npm run start # Automatically builds and runs the app

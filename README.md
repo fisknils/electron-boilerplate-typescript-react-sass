@@ -16,4 +16,4 @@ $ npm run start # Automatically builds and runs the app
 [How-to setup Webpack on an ES6 React Application with SASS - Jonathan Petitcolas](https://www.jonathan-petitcolas.com/2015/05/15/howto-setup-webpack-on-es6-react-application-with-sass.html)
 
 ## License
-[MIT](https://github.com/Chuzzy/electron-react-typescript/blob/master/LICENSE). Feel free to fork this repo, clone it, give some credit to me if you use it, whatever. If you break something, it's not my fault.
+[MIT](https://github.com/Chuzzy/electron-react-typescript/blob/master/LICENSE). Feel free to fork this repo, clone it, give some credit to me if you use it, whatever. If you break something, it's not my fault.# electron-boilerplate-typescript-react-sass

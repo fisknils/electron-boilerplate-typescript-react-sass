@@ -1,7 +1,7 @@
 {
-  "name": "electron-react-boilerplate",
+  "name": "electron-boilerplate-typescript-react-sass",
   "version": "1.0.0",
-  "description": "A simple Electron application using TypeScript, React and Sass",
+  "description": "An Electron boilerplate using TypeScript, React and Sass",
   "scripts": {
     "dev": "rimraf dist && electron-webpack dev",
     "prod": "rimraf dist && electron-webpack prod",

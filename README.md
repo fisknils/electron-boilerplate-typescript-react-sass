@@ -1,4 +1,4 @@
-# electron-react-typescript
+# electron-react-typescript-sass
 A simple Electron application that uses [TypeScript](http://www.typescriptlang.org/), [React](https://reactjs.org) and [Sass](http://sass-lang.com), along with [Babel](https://babeljs.io/) and [Webpack](https://webpack.github.io).
 
 ## Usage

@@ -1,5 +1,5 @@
 {
-  "name": "electron-react-typescript",
+  "name": "electron-react-boilerplate",
   "version": "1.0.0",
   "description": "A simple Electron application using TypeScript, React and Sass",
   "scripts": {

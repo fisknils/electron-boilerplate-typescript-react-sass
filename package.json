@@ -40,7 +40,7 @@
     "electron": "^9.2.0",
     "electron-builder": "^22.8.0",
     "electron-webpack": "^2.8.2",
-    "node-sass": "^4.14.1",
+    "node-sass": "^9.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rimraf": "^3.0.2",

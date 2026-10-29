@@ -37,7 +37,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "cross-env": "^7.0.2",
-    "electron": "^9.2.0",
+    "electron": "^45.1.0",
     "electron-builder": "^22.8.0",
     "electron-webpack": "^2.8.2",
     "node-sass": "^9.0.0",

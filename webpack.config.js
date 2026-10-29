@@ -3,12 +3,13 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+// esbuild only strips types; type-checking is done by `tsc` (see the typecheck script).
 const tsRule = {
   test: /\.tsx?$/,
   exclude: /node_modules/,
   use: {
-    loader: "ts-loader",
-    options: { configFile: path.resolve(__dirname, "tsconfig.json") },
+    loader: "esbuild-loader",
+    options: { target: "es2022", tsconfig: path.resolve(__dirname, "tsconfig.json") },
   },
 };
 

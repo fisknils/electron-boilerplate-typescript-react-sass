@@ -1,9 +1,11 @@
 "use strict";
 
 // Builds the main process in watch mode, serves the renderer with webpack-dev-server
-// and (re)starts Electron whenever the main process bundle changes.
+// and (re)starts Electron whenever the main process bundle changes. Type errors are
+// reported by `tsc --watch` running alongside, since esbuild-loader doesn't type-check.
 
 const { spawn } = require("child_process");
+const path = require("path");
 const webpack = require("webpack");
 const WebpackDevServer = require("webpack-dev-server");
 const electron = require("electron");
@@ -14,9 +16,11 @@ let electronProcess = null;
 let restarting = false;
 
 function startElectron() {
+  // VS Code's integrated terminal sets ELECTRON_RUN_AS_NODE, which would make Electron run as plain Node.
+  const { ELECTRON_RUN_AS_NODE, ...env } = process.env;
   electronProcess = spawn(electron, [".", ...process.argv.slice(2)], {
     stdio: "inherit",
-    env: { ...process.env, NODE_ENV: "development", WDS_PORT: String(rendererConfig.devServer.port) },
+    env: { ...env, NODE_ENV: "development", WDS_PORT: String(rendererConfig.devServer.port) },
   });
   electronProcess.on("close", () => {
     if (!restarting) {
@@ -37,7 +41,17 @@ function restartElectron() {
   electronProcess.kill();
 }
 
+function startTypeChecker() {
+  const tsc = path.join(path.dirname(require.resolve("typescript/package.json")), "bin", "tsc");
+  const typeChecker = spawn(process.execPath, [tsc, "--noEmit", "--watch", "--preserveWatchOutput"], {
+    stdio: "inherit",
+  });
+  process.on("exit", () => typeChecker.kill());
+}
+
 async function main() {
+  startTypeChecker();
+
   const devServer = new WebpackDevServer(rendererConfig.devServer, webpack({ ...rendererConfig, mode: "development" }));
   await devServer.start();
 

@@ -3,18 +3,18 @@
   "compilerOptions": {
     "allowJs": true,
     "jsx": "react",
-    "target": "es5",
-    "moduleResolution": "node",
+    "target": "es2022",
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "types": ["webpack-env"],
+    "isolatedModules": true,
+    "noEmit": true,
     "pretty": true,
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noEmitOnError": true,
     "skipLibCheck": true,
-    "sourceMap": true,
-    "rootDir": ".",
-    "outDir": "dist",
     "noImplicitAny": true
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist"]
 }

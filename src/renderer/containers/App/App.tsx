@@ -12,7 +12,7 @@ export class App extends React.Component<Props> {
   };
   render() {
     return (
-      <React.Suspense fallback={Loading}>
+      <React.Suspense fallback={<Loading />}>
         <div>
           <h1>Electron with TypeScript and React (and SCSS)</h1>
           <p>Node version: {ipc.sendSync("version")}</p>

@@ -2,7 +2,6 @@
 
 import { app, BrowserWindow } from "electron";
 import * as path from "path";
-import { format as formatUrl } from "url";
 
 import "./ipcMain";
 
@@ -13,7 +12,7 @@ let mainWindow: BrowserWindow[] = [];
 
 function createMainWindow() {
   const window = new BrowserWindow({
-    webPreferences: { nodeIntegration: true },
+    webPreferences: { nodeIntegration: true, contextIsolation: false },
   });
 
   if (isDevelopment) {
@@ -21,15 +20,9 @@ function createMainWindow() {
   }
 
   if (isDevelopment) {
-    window.loadURL(`http://localhost:${process.env.ELECTRON_WEBPACK_WDS_PORT}`);
+    window.loadURL(`http://localhost:${process.env.WDS_PORT}`);
   } else {
-    window.loadURL(
-      formatUrl({
-        pathname: path.join(__dirname, "..", ".renderer-index-template.html"),
-        protocol: "file",
-        slashes: true,
-      })
-    );
+    window.loadFile(path.join(__dirname, "..", "renderer", "index.html"));
   }
 
   window.on("closed", () => {

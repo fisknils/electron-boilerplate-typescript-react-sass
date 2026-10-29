@@ -1,5 +1,5 @@
 # electron-react-typescript-sass
-A simple Electron application that uses [TypeScript](http://www.typescriptlang.org/), [React](https://reactjs.org) and [Sass](http://sass-lang.com), along with [Babel](https://babeljs.io/) and [Webpack](https://webpack.github.io).
+A simple Electron application that uses [TypeScript](http://www.typescriptlang.org/), [React](https://reactjs.org) and [Sass](http://sass-lang.com) and [Webpack](https://webpack.github.io).
 
 ## Usage
 You can use this project to create your own Electron applications.
@@ -7,7 +7,10 @@ You can use this project to create your own Electron applications.
 $ git clone https://github.com/fisknils/electron-boilerplate-typescript-react-sass.git
 $ cd electron-react-typescript
 $ npm install # Install dependencies
-$ npm run start # Automatically builds and runs the app
+$ npm run dev # Starts the dev server and runs the app with hot reloading
+$ npm run prod # Builds the production bundle into dist/
+$ npm start # Runs the production bundle
+$ npm run dist # Packages the app into releases/
 ```
 
 ## Resources
